@@ -7,6 +7,7 @@ import { Input } from "../../components/Input"
 import { Button } from "../../components/Button"
 import { Textarea } from "../../components/Textarea"
 import { NoteItem } from "../../components/NoteItem"
+import { Link } from 'react-router-dom'
 
 
 export function NewNote() {
@@ -17,7 +18,7 @@ export function NewNote() {
       <main>
         <Content>
           <HeaderWrapper>
-            <a href="#"><FiArrowLeft />Voltar</a>
+            <Link to="/"><FiArrowLeft />Voltar</Link>
 
             <h1>Novo filme</h1>
           </HeaderWrapper>

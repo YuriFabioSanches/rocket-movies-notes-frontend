@@ -8,8 +8,8 @@ export function Header() {
 
       <Input placeholder="Pesquisar pelo título" />
 
-      <Profile>
-        <div className="brand-text">
+      <Profile to="/profile">
+        <div className="profile-text">
           <strong>Yuri Fabio Sanches</strong>
           <span>sair</span>
         </div>
