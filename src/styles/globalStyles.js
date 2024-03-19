@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-export const GlobalStyles = createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
@@ -10,10 +10,31 @@ export const GlobalStyles = createGlobalStyle`
   :root {
     font-size: 62.5%;
   }
-
+  
   body {
-    height: 100vh;
+    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+    color: ${({ theme }) => theme.COLORS.WHITE};
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body, input, button, textarea {
+    font-family: "Roboto Slab", sans-serif;
     font-size: 1.6rem;
-    background: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+    outline: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  button, a {
+    cursor: pointer;
+    transition: filter 0.3s;
+  }
+
+  button:hover, a:hover {
+    filter: brightness(0.8);
   }
 `;
+
+export default GlobalStyles;
