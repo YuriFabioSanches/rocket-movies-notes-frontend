@@ -8,7 +8,7 @@ The project idea is to create a ReactJs interface where the user can register a 
 
 Below is the figma project used as a basis for creating the interfaces:
 
-![Figma project](https://www.figma.com/file/TtBGYRBWqcqr26IOWQcxDI/RocketMovies-(Copy)?type=design&node-id=0-1&mode=design&t=BMIemGYew1dRIMVI-0)
+<a href="https://www.figma.com/file/TtBGYRBWqcqr26IOWQcxDI/RocketMovies-(Copy)?type=design&mode=design&t=sYzXL8uO0KOCt3pq-0">Figma Project</a>
 
 <h2 id="technologies">💻 Technologies</h2>
 
