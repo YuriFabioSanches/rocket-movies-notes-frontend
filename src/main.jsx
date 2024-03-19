@@ -1,16 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-
-import theme from './styles/theme'
 import { ThemeProvider } from 'styled-components'
-import { GlobalStyles } from './styles/globalStyles.js'
+import theme from './styles/theme'
+import { GlobalStyle } from './styles/globalStyles'
+
+import { SignIn } from './pages/SignIn' 
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      <App />
+      <GlobalStyle />
+      <SignIn />
     </ThemeProvider>
   </React.StrictMode>,
 )
