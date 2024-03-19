@@ -19,7 +19,7 @@ export const Container = styled.header`
   }
 `;
 
-export const Brand = styled.div`
+export const Profile = styled.div`
   display: flex;
   align-items: center;
   gap: .8rem;

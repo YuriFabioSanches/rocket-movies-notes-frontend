@@ -1,4 +1,4 @@
-import { Container, Brand } from "./styles";
+import { Container, Profile } from "./styles";
 import { Input } from "../Input"
 
 export function Header() {
@@ -8,13 +8,13 @@ export function Header() {
 
       <Input placeholder="Pesquisar pelo título" />
 
-      <Brand>
+      <Profile>
         <div className="brand-text">
           <strong>Yuri Fabio Sanches</strong>
           <span>sair</span>
         </div>
         <img src="https://github.com/YuriFabioSanches.png" alt="Foto do usuário" />
-      </Brand>
+      </Profile>
     </Container>
   );
 }
