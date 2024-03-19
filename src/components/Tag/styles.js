@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.span`
   padding: .8rem 1.6rem;
   border-radius: .8rem;
-  background: ${({ theme }) => theme.COLORS.BACKGROUND_900};
+  background: ${({ theme, $isnothome }) => $isnothome === "true" ? theme.COLORS.GRAY_700 : theme.COLORS.BACKGROUND_900};
 
   font-style: normal;
   font-weight: 400;
