@@ -4,6 +4,7 @@ import { Container, BackgroundImg, Form, InputWrapper } from "./styles";
 
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
+import { Link } from 'react-router-dom'
 
 export function SignIn() {
   return(
@@ -23,7 +24,7 @@ export function SignIn() {
         </div>
 
         <div className="link">
-          <a>Criar conta</a>
+          <Link to="/register">Criar conta</Link>
         </div>
       </Form>
 
