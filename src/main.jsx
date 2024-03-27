@@ -4,13 +4,16 @@ import { ThemeProvider } from 'styled-components'
 import theme from './styles/theme'
 import GlobalStyle from './styles/globalStyles'
 
-import { Routes } from './routes' 
+import { Routes } from './routes'
+import { AuthProvider } from "./hooks/authHooks/auth" 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Routes />
+      <AuthProvider>
+        <Routes />
+      </AuthProvider>
     </ThemeProvider>
   </React.StrictMode>,
 )

@@ -2,10 +2,10 @@ import { Container, BackgroundImg, Form, InputWrapper } from "./styles";
 import { FiMail, FiLock, FiUser, FiArrowLeft } from "react-icons/fi"
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
-import { Link, useNavigate } from 'react-router-dom'
 
-import { useState } from "react";
+import { Link, useNavigate } from 'react-router-dom'
 import { api } from "../../services/api"
+import { useState } from "react";
 
 export function SignUp() {
   const [name, setName] = useState("")
@@ -20,8 +20,11 @@ export function SignUp() {
 
     try{
       await api.post("/users", { name, email, password })
+
       alert("Account created successfully!")
+
       navigate("/")
+
     }catch(error){
       if(error.response){
         alert(error.response.data.message)
@@ -63,11 +66,17 @@ export function SignUp() {
         </InputWrapper>
 
         <div className="button-wrapper">
-          <Button title="Cadastrar" onClick={handleSignUp} />
+          <Button 
+            title="Cadastrar" 
+            onClick={handleSignUp}
+          />
         </div>
 
         <div className="link">
-          <Link to="/"><FiArrowLeft /> Voltar para o login</Link>
+          <Link 
+            to="/">
+              <FiArrowLeft /> Voltar para o login
+          </Link>
         </div>
       </Form>
       
