@@ -79,3 +79,14 @@ export const Avatar = styled.div`
     filter: brightness(0.8);
   }
 `;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+  gap: .8rem;
+  margin-top: 2.4rem;
+
+  .inverted-colors {
+    background: ${({ theme }) => theme.COLORS.GRAY_700};
+    color: ${({ theme }) => theme.COLORS.PINK};
+  }
+`;

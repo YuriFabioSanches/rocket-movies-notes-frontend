@@ -31,6 +31,60 @@ function AuthProvider({ children }) {
     }
   }
 
+  function signOut() {
+    localStorage.removeItem("@rocketmovies:user")
+    localStorage.removeItem("@rocketmovies:token")
+
+    setData({})
+  }
+
+  async function updateProfile({ user, avatarFile }) {
+    try{
+      if(avatarFile){
+        const fileUploadForm = new FormData()
+        fileUploadForm.append("avatar", avatarFile)
+
+        const response = await api.patch("/users/avatar", fileUploadForm)
+        user.avatar = response.data
+      }
+
+      await api.put("/users", user)
+
+      localStorage.setItem("@rocketmovies:user", JSON.stringify(user))
+
+      setData({user, token: data.token})
+
+      alert("User profile updated!")
+
+    }catch(error){
+      if(error.response){
+        alert(error.response.data.message)
+      }else{
+        alert("Impossible to update profile.")
+      }
+    }
+  }
+
+  async function deleteProfile({ password }) {
+    try{
+      const response = await api.post("/users/delete", {password})
+
+      localStorage.removeItem("@rocketmovies:user")
+      localStorage.removeItem("@rocketmovies:token")
+  
+      setData({})
+
+      alert("Profile delete sucessfully.")
+      return response.data.deleted
+    }catch(error){
+      if(error.response){
+        alert(error.response.data.message)
+      }else{
+        alert("Unable to delete profile.")
+      }
+    }
+  }
+
   useEffect(() => {
     const token = localStorage.getItem("@rocketmovies:token")
     const user = localStorage.getItem("@rocketmovies:user")
@@ -43,7 +97,7 @@ function AuthProvider({ children }) {
   }, [])
 
   return(
-    <AuthContext.Provider value={{ signIn, user: data.user }}>
+    <AuthContext.Provider value={{ signIn, signOut, updateProfile, deleteProfile, user: data.user }}>
       {children}
     </AuthContext.Provider>
   )

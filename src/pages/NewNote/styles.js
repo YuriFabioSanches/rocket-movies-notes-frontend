@@ -12,9 +12,7 @@ export const Container = styled.div`
     grid-area: content;
     padding: 4rem 10.6rem 0 12.3rem;
   }
-
-  
-  `;
+`;
 
 export const Content = styled.div`
   display: flex;
